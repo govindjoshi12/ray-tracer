@@ -134,29 +134,41 @@ bool TrimeshFace::intersectLocal(ray& r, isect& i) const
 
 	if(leftOfBA && leftOfCB && leftOfAC) {
 		// printf("Intersection");
-		i.setObject(this);
-		i.setMaterial(this->getMaterial());
-		i.setT(t);
-		
-		// TODO: Insert barycentric coordinates u and v into isect object
 
 		// Need to do barycentric interpolation if no per-vertex normals
 		glm::dvec3 newNorm = this->normal;
 		if(parent->vertNorms) {
-			glm::dvec3 aNorm = parent->normals[ids[0]];
-			glm::dvec3 bNorm = parent->normals[ids[1]];
-			glm::dvec3 cNorm = parent->normals[ids[2]];
-			
-			// Weighting normals by dividing by distance to intersection point
-			aNorm /= glm::distance(pos, aNorm);
-			bNorm /= glm::distance(pos, bNorm);
-			cNorm /= glm::distance(pos, cNorm);
+			// Barycentric Interpolation
+			double topLeft = glm::dot(b - a, b - a);
+			double topRight = glm::dot(c - a, b - a);
+			double bottomLeft = glm::dot(b - a, c - a);
+			double bottomRight = glm::dot(c - a, c - a);
 
-			newNorm = aNorm + bNorm + cNorm;
-			newNorm = glm::normalize(newNorm * (1.0/3.0));
-			printf("vertNorms!");
+			// How does constructor assign vals in matrix?
+			glm::mat2x2 matrixAInverse = glm::inverse(glm::mat2x2(topLeft, bottomLeft, topRight, bottomRight));
+
+			// center of mass => intersection point => pos
+			double top = glm::dot(b - a, pos - a);
+			double bottom = glm::dot(c - a, pos - a);
+			// vec2 (instead of dvec2) is a column vector
+			glm::vec2 matrixB = glm::dvec2(top, bottom);
+			// TODO: Validate Coordinates
+			glm::vec2 coords = matrixAInverse * matrixB;
+
+			glm::dvec3 weights = glm::dvec3(1 - coords[0] - coords[1], coords[0], coords[1]);
+			
+			// New "Smooth" normal with barycentric coords as weights
+			glm::dvec3 aNorm = (double)weights[0] * parent->normals[ids[0]];
+			glm::dvec3 bNorm = (double)weights[1] * parent->normals[ids[1]];
+			glm::dvec3 cNorm = (double)weights[2] * parent->normals[ids[2]];
+			newNorm = glm::normalize(aNorm + bNorm + cNorm);
+
+			i.setBary(weights);
 		} 
 
+		i.setObject(this);
+		i.setMaterial(this->getMaterial());
+		i.setT(t);
 		i.setN(newNorm);
 		return true;
 	}

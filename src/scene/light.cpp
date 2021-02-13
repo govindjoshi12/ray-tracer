@@ -43,7 +43,7 @@ double PointLight::distanceAttenuation(const glm::dvec3& P) const
 	double distance = glm::distance(P, position);
 	double linear = linearTerm * distance;
 	double quadratic = quadraticTerm * std::pow(distance, 2);
-	return std::max((1 / (constantTerm + linear + quadratic)), 1.0);
+	return std::min((1 / (constantTerm + linear + quadratic)), 1.0);
 }
 
 glm::dvec3 PointLight::getColor() const

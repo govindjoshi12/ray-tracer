@@ -54,8 +54,8 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 	// I = (ka * I_scene) + I_in (kd*max(l dot n) + ks * max(eye dot reflection, 0)^spec_coeff) 
 	glm::dvec3 P = r.at(i.getT());
 	glm::dvec3 normal = i.getN();
-	glm::dvec3 diffuse = glm::dvec3(0, 0, 0);
-	glm::dvec3 specular = glm::dvec3(0, 0, 0);
+	glm::dvec3 diffuse = glm::dvec3(0.0, 0.0, 0.0);
+	glm::dvec3 specular = glm::dvec3(0.0, 0.0, 0.0);
 	glm::dvec3 direction = r.getDirection();
 	//printf("normal: (%f, %f, %f)\n", normal[0], normal[1], normal[2]);
 
@@ -70,7 +70,7 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 		// w_in = lightDir "Incident light at direction P"
 		// n = normal
 		// Reflection Vector: w_out = w_in - (2n(w_in dot n))
-		glm::dvec3 reflection = (lightDir - ((normal + normal) * (glm::dot(lightDir, normal))));
+		glm::dvec3 reflection = (lightDir - ((2.0 * normal) * (glm::dot(lightDir, normal))));
 		specular += lightColor * std::pow(std::max(glm::dot(reflection, direction), 0.0), shininess(i));
 	}
 	glm::dvec3 shadingColor = ke(i) + (ka(i) * ambient) + (kd(i) * diffuse) + (ks(i) * specular);

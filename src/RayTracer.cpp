@@ -19,6 +19,7 @@
 
 #include <iostream>
 #include <fstream>
+// #include <future>
 
 using namespace std;
 extern TraceUI* traceUI;
@@ -75,13 +76,18 @@ glm::dvec3 RayTracer::traceRay(ray& r, const glm::dvec3& thresh, int depth, doub
 {
 	isect i;
 	glm::dvec3 colorC;
+
 #if VERBOSE
 	std::cerr << "== current depth: " << depth << std::endl;
 #endif
 
+	if(depth < 0) {
+		return scene->ambient();
+	}
+
 	if(scene->intersect(r, i)) {
 		// YOUR CODE HERE
-
+		
 		// An intersection occurred!  We've got work to do.  For now,
 		// this code gets the material for the surface that was intersected,
 		// and asks that material to provide a color for the ray.
@@ -91,8 +97,50 @@ glm::dvec3 RayTracer::traceRay(ray& r, const glm::dvec3& thresh, int depth, doub
 		// more steps: add in the contributions from reflected and refracted
 		// rays.
 
+		// Shoot a reflective ray(s) if object is reflective
+		/*
+			Many objects are reflective; some perfectly so, others not so much.
+			For diffuse objects do we shoot several reflective rays in all
+			directions? 
+		*/
+
+		/*
+			For the first object that the shadow ray intersects with, color that 
+			pixel black. If shadow ray hits a translucent objects, do 
+			shadow attenuation based on k^d formula
+		*/
+
+		// Shoot refractive ray if object is refractive
+		/*
+			Use law learned in class. If parameters result in invalid angle,
+			shoot reflective ray instead. In this case, multiplying by material 
+			constant for that object is "optional."
+
+			Snell's Law
+		*/	
 		const Material& m = i.getMaterial();
 		colorC = m.shade(scene.get(), r, i);
+
+		t = i.getT();
+		glm::dvec3 isectPoint = r.at(t);
+		glm::dvec3 isectNormal = i.getN();
+		glm::dvec3 rayDir = r.getDirection();
+
+		// Shoot shadow rays towards each light sources (set to no recursion)
+
+		// Ray reflects
+		if(m.Refl()) {
+			const glm::dvec3 reflectionDir = glm::normalize(rayDir - ((2.0 * isectNormal) * (glm::dot(rayDir, isectNormal))));
+			ray reflectionRay(isectPoint, reflectionDir, r.getAtten(), ray::REFLECTION);
+			// According to scratchapixel, reduce intesnity of relfected ray's color by 20%
+			colorC += 0.8 * traceRay(reflectionRay, thresh, depth - 1, t);
+		}
+
+		// Ray refracts
+		if(m.Trans()) {
+
+		}
+
 	} else {
 		// No intersection.  This ray travels to infinity, so we color
 		// it according to the background color, which in this (simple) case
@@ -229,7 +277,6 @@ void RayTracer::traceImage(int w, int h)
 	{
 		for(int j = 0; j < h; j++)
 		{
-			// TODO: Asynch
 			tracePixel(i, j);
 		}
 	}

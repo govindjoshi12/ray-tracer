@@ -243,11 +243,11 @@ public:
     void setIndex( const MaterialParameter& index )            { _index = index; }
 
 	// get booleans for reflection and refraction
-	bool Refl() const { return _refl; }
-	bool Trans() const { return _trans; }
+	bool Refl() const { return _refl; } // If it reflected
+	bool Trans() const { return _trans; } // If it refracted
 	bool Recur() const { return _recur; }
 	bool Spec() const { return _spec; }
-	bool Both() const { return _both; }
+	bool Both() const { return _both; } // If it did both
 
 private:
     MaterialParameter _ke;                    // emissive
