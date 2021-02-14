@@ -53,9 +53,9 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 	
 	// I = (ka * I_scene) + I_in (kd*max(l dot n) + ks * max(eye dot reflection, 0)^spec_coeff) 
 	glm::dvec3 P = r.at(i.getT());
-	glm::dvec3 normal = i.getN();
 	glm::dvec3 diffuse = glm::dvec3(0.0, 0.0, 0.0);
 	glm::dvec3 specular = glm::dvec3(0.0, 0.0, 0.0);
+	glm::dvec3 normal = i.getN();
 	glm::dvec3 direction = r.getDirection();
 	//printf("normal: (%f, %f, %f)\n", normal[0], normal[1], normal[2]);
 
@@ -63,8 +63,10 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 		glm::dvec3 lightDir = pLight->getDirection(P);
 		glm::dvec3 lightColor = pLight->getColor() * pLight->distanceAttenuation(P);
 
-		// Need to factor in attenuation in equations below
-		// What is "vis" in scratchAPixel?
+		// Need to factor in shadowAttenuation
+		ray shadowRay(P, glm::normalize(lightDir), r.getAtten(), ray::SHADOW);
+		lightColor *= pLight->shadowAttenuation(shadowRay, P);
+
 		diffuse += lightColor * std::max(glm::dot(lightDir, normal), 0.0);
 		
 		// w_in = lightDir "Incident light at direction P"

@@ -19,7 +19,61 @@ glm::dvec3 DirectionalLight::shadowAttenuation(const ray& r, const glm::dvec3& p
 {
 	// YOUR CODE HERE:
 	// You should implement shadow-handling code here.
-	return glm::dvec3(1.0, 1.0, 1.0);
+
+	// Shadow Rays
+	/*
+		Check if ray is a shadow ray. If it is, return black 
+		if the object intersected with is opaque. Else, shoot
+		another shadow ray in the same direction and apply
+		shadow attenuation based on kt^d formula. Return color. 
+		Shadow Rays will only be shot from shade method.
+	*/
+	// YOUR CODE HERE:
+	// You should implement shadow-handling code here.
+	glm::dvec3 dir = r.getDirection();
+	ray shadow(p, dir, r.getAtten(), ray::SHADOW);
+	
+	isect i;
+
+	/* Check that the distance from the base of the shadowray to 
+	the intersection is less than the distance from the point light 
+	to the base of the shadowray */
+	if(scene->intersect(shadow, i)) {
+		// Find the point of intersection
+		glm::dvec3 isectPoint = shadow.at(i.getT());
+		
+		// // Get property of material
+		const Material &m = i.getMaterial();
+
+		if(m.Trans()) {
+			glm::dvec3 normal = i.getN();
+			glm::dvec3 attenFactor = glm::dvec3(1.0, 1.0, 1.0);
+			double cos1 = glm::dot(normal, shadow.getDirection());
+			
+			// If ray entering object, atten factor doesn't change
+			// else, compute kt^d
+			if(cos1 >= 0) {
+				double distanceInObj = glm::distance(p, isectPoint);
+				glm::dvec3 kt = m.kt(i);
+				glm::dvec3 ktToD = glm::dvec3(pow(kt[0], distanceInObj), 
+											pow(kt[1], distanceInObj), 
+											pow(kt[2], distanceInObj));
+				attenFactor *= ktToD;
+				
+			}
+
+			ray newShadowRay(isectPoint, shadow.getDirection(), shadow.getAtten(), ray::SHADOW);
+			return attenFactor * shadowAttenuation(newShadowRay, isectPoint);
+		} else {
+			// If even one object in shadow ray path is opaque, pixel is black.
+			return glm::dvec3(0.0, 0.0, 0.0);
+		}
+	} else {
+		// Base case: Does not intersect
+		// No shadow, no attenuation
+		return glm::dvec3(1.0, 1.0, 1.0);
+	}
+
 }
 
 glm::dvec3 DirectionalLight::getColor() const
@@ -61,7 +115,54 @@ glm::dvec3 PointLight::shadowAttenuation(const ray& r, const glm::dvec3& p) cons
 {
 	// YOUR CODE HERE:
 	// You should implement shadow-handling code here.
-	return glm::dvec3(1,1,1);
+	glm::dvec3 dir = r.getDirection();
+	ray shadow(p, dir, r.getAtten(), ray::SHADOW);
+	
+	isect i;
+	bool inter = scene->intersect(shadow, i);
+
+	/* Check that the distance from the base of the shadowray to 
+	the intersection is less than the distance from the point light 
+	to the base of the shadowray */
+	double baseToIntersection = glm::distance(p, shadow.at(i.getT()));
+	double baseToPL = glm::distance(p, position);
+	inter = inter && (baseToIntersection < baseToPL);
+
+	if(inter) {
+		// Find the point of intersection
+		glm::dvec3 isectPoint = shadow.at(i.getT());
+		
+		// // Get property of material
+		const Material &m = i.getMaterial();
+
+		if(m.Trans()) {
+			glm::dvec3 normal = i.getN();
+			glm::dvec3 attenFactor = glm::dvec3(1.0, 1.0, 1.0);
+			double cos1 = glm::dot(normal, shadow.getDirection());
+			
+			// If ray entering object, atten factor doesn't change
+			// else, compute kt^d
+			if(cos1 >= 0) {
+				double distanceInObj = glm::distance(p, isectPoint);
+				glm::dvec3 kt = m.kt(i);
+				glm::dvec3 ktToD = glm::dvec3(pow(kt[0], distanceInObj), 
+											pow(kt[1], distanceInObj), 
+											pow(kt[2], distanceInObj));
+				attenFactor *= ktToD;
+				
+			}
+
+			ray newShadowRay(isectPoint, shadow.getDirection(), shadow.getAtten(), ray::SHADOW);
+			return attenFactor * shadowAttenuation(newShadowRay, isectPoint);
+		} else {
+			// If even one object in shadow ray path is opaque, pixel is black.
+			return glm::dvec3(0.0, 0.0, 0.0);
+		}
+	} else {
+		// Base case: Does not intersect
+		// No shadow, no attenuation
+		return glm::dvec3(1.0, 1.0, 1.0);
+	}
 }
 
 #define VERBOSE 0

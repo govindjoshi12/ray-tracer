@@ -181,8 +181,6 @@ public:
 
     virtual glm::dvec3 shade( Scene *scene, const ray& r, const isect& i ) const;
 
-
-    
     Material &
     operator+=( const Material &m )
     {
@@ -226,9 +224,8 @@ public:
     void setDiffuse( const glm::dvec3& kd )      { _kd.setValue( kd ); }
     void setReflective( const glm::dvec3& kr )   { _kr.setValue( kr ); setBools(); }
     void setTransmissive( const glm::dvec3& kt ) { _kt.setValue( kt ); setBools(); }
-    void setShininess( double shininess )   
-                                            { _shininess.setValue( shininess ); }
-    void setIndex( double index )           { _index.setValue( index ); }
+    void setShininess( double shininess )        { _shininess.setValue( shininess ); }
+    void setIndex( double index )                { _index.setValue( index ); }
 
 
     // setting functions taking MaterialParameters

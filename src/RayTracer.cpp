@@ -81,43 +81,13 @@ glm::dvec3 RayTracer::traceRay(ray& r, const glm::dvec3& thresh, int depth, doub
 	std::cerr << "== current depth: " << depth << std::endl;
 #endif
 
+	colorC = glm::dvec3(0.0, 0.0, 0.0);
 	if(depth < 0) {
-		return scene->ambient();
+		return colorC;
 	}
 
 	if(scene->intersect(r, i)) {
-		// YOUR CODE HERE
-		
-		// An intersection occurred!  We've got work to do.  For now,
-		// this code gets the material for the surface that was intersected,
-		// and asks that material to provide a color for the ray.
-
-		// This is a great place to insert code for recursive ray tracing.
-		// Instead of just returning the result of shade(), add some
-		// more steps: add in the contributions from reflected and refracted
-		// rays.
-
-		// Shoot a reflective ray(s) if object is reflective
-		/*
-			Many objects are reflective; some perfectly so, others not so much.
-			For diffuse objects do we shoot several reflective rays in all
-			directions? 
-		*/
-
-		/*
-			For the first object that the shadow ray intersects with, color that 
-			pixel black. If shadow ray hits a translucent objects, do 
-			shadow attenuation based on k^d formula
-		*/
-
-		// Shoot refractive ray if object is refractive
-		/*
-			Use law learned in class. If parameters result in invalid angle,
-			shoot reflective ray instead. In this case, multiplying by material 
-			constant for that object is "optional."
-
-			Snell's Law
-		*/	
+		// Shade Pixel based on Phong Shading Model
 		const Material& m = i.getMaterial();
 		colorC = m.shade(scene.get(), r, i);
 
@@ -126,19 +96,60 @@ glm::dvec3 RayTracer::traceRay(ray& r, const glm::dvec3& thresh, int depth, doub
 		glm::dvec3 isectNormal = i.getN();
 		glm::dvec3 rayDir = r.getDirection();
 
-		// Shoot shadow rays towards each light sources (set to no recursion)
-
-		// Ray reflects
+		// Shoot a reflective ray(s) if object is reflective
+		/*
+			Recursively shoot reflection rays in reflection direction based 
+			on formula learned in class. Scale the obtained color by the
+			intensity reduction constant (kr(i))
+		*/
 		if(m.Refl()) {
 			const glm::dvec3 reflectionDir = glm::normalize(rayDir - ((2.0 * isectNormal) * (glm::dot(rayDir, isectNormal))));
 			ray reflectionRay(isectPoint, reflectionDir, r.getAtten(), ray::REFLECTION);
-			// According to scratchapixel, reduce intesnity of relfected ray's color by 20%
-			colorC += 0.8 * traceRay(reflectionRay, thresh, depth - 1, t);
+			colorC += m.kr(i) * traceRay(reflectionRay, thresh, depth - 1.0, t);
 		}
 
-		// Ray refracts
-		if(m.Trans()) {
+		// Shoot refractive ray if object is refractive
+		/*
+			Use law learned in class. If parameters result in invalid angle,
+			shoot reflective ray instead. In this case, multiplying by material 
+			constant for that object is "optional."
 
+			Snell's Law
+		*/
+		if(m.Trans()) {
+			double cos1 = glm::dot(rayDir, isectNormal);
+			glm::dvec3 incidentNormal = isectNormal;
+
+			double n1 = 1; // Speed in air or vaccuum
+			double n2 = m.index(i);
+
+			if(cos1 < 0.0) {
+				cos1 = -cos1;
+			} else {
+				std::swap(n1, n2);
+				incidentNormal = -incidentNormal;
+			}
+
+			double iof = n1 / n2;
+			double sin1 = iof * std::sqrt(1.0 - std::pow(cos1, 2));
+			// Check if there is total internal reflection
+			if (sin1 < -1.0 || sin1 > 1.0) {
+
+				// Total internal reflection
+				// Make method for reflection...?????
+				const glm::dvec3 reflectionDir = glm::normalize(rayDir - ((2.0 * isectNormal) * (glm::dot(rayDir, isectNormal))));
+				ray reflectionRay(isectPoint, reflectionDir, r.getAtten(), ray::REFLECTION);
+				colorC += m.kr(i) * traceRay(reflectionRay, thresh, depth - 1.0, t);	
+
+			} else {
+				// Bottom equation from scratchapixel, uses trig identities
+				// How could we use sin1 to rotate incidentNormal to correct dir?
+				double c = 1 - std::pow(iof, 2.0) * (1.0 - std::pow(cos1, 2.0));
+				glm::dvec3 refrDir = (iof * rayDir) 
+					+ (((iof * cos1) - std::sqrt(c)) * incidentNormal);
+				ray refrRay(isectPoint, refrDir, r.getAtten(), ray::REFRACTION);
+				colorC += traceRay(refrRay, thresh, depth-1.0, t);
+			}
 		}
 
 	} else {
