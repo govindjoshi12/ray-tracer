@@ -10,7 +10,7 @@ import colorama
 from colorama import Fore, Style
 from zipfile import ZipFile
 import tarfile
-from scipy.misc import imread
+from imageio import imread
 import numpy as np
 import hashlib
 import pickle

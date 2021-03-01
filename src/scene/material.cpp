@@ -59,6 +59,12 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 	glm::dvec3 direction = r.getDirection();
 	//printf("normal: (%f, %f, %f)\n", normal[0], normal[1], normal[2]);
 
+	double cos1 = glm::dot(normal, direction);
+	// If exiting trans object
+	if(cos1 >= 0) {
+		normal = -normal;
+	}
+
 	for ( const auto& pLight : scene->getAllLights() ) {
 		glm::dvec3 lightDir = pLight->getDirection(P);
 		glm::dvec3 lightColor = pLight->getColor() * pLight->distanceAttenuation(P);
