@@ -164,15 +164,16 @@ glm::dvec3 RayTracer::traceRay(ray& r, const glm::dvec3& thresh, int depth, doub
 			}
 
 			double iof = n1 / n2;
-			double sin1 = iof * std::sqrt(1.0 - std::pow(cos1, 2));
+			// double sin1 = iof * std::sqrt(std::max(0.0, 1.0 - std::pow(cos1, 2)));
+			double tir = 1 - (std::pow(iof, 2) *  (1 - std::pow(cos1, 2)));
 			// Check if there is total internal reflection
-			if (sin1 < -1.0 || sin1 > 1.0) {
+			if (tir < 0) {  // sin1 < -1.0 || sin1 > 1.0
 
 				// Total internal reflection
 				// Make method for reflection...?????
 				const glm::dvec3 reflectionDir = glm::normalize(rayDir - ((2.0 * isectNormal) * (glm::dot(rayDir, isectNormal))));
 				ray reflectionRay(isectPoint, reflectionDir, r.getAtten(), ray::REFLECTION);
-				colorC += m.kr(i) * traceRay(reflectionRay, thresh, depth - 1.0, t);	
+				colorC += m.kr(i) * traceRay(reflectionRay, thresh, depth - 1.0, t);
 
 			} else {
 				// Bottom equation from scratchapixel, uses trig identities
