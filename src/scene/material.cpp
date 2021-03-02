@@ -61,9 +61,10 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 
 	double cos1 = glm::dot(normal, direction);
 	// If exiting trans object
+
 	if(cos1 >= 0) {
 		normal = -normal;
-	}
+	}	
 
 	for ( const auto& pLight : scene->getAllLights() ) {
 		glm::dvec3 lightDir = pLight->getDirection(P);
@@ -74,7 +75,9 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 		lightColor *= pLight->shadowAttenuation(shadowRay, P);
 
 		diffuse += lightColor * std::max(glm::dot(lightDir, normal), 0.0);
-		
+		if(cos1 >= 0) {
+			diffuse = glm::dvec3(std::abs(diffuse[0]), std::abs(diffuse[1]), std::abs(diffuse[2]));
+		}		
 		// w_in = lightDir "Incident light at direction P"
 		// n = normal
 		// Reflection Vector: w_out = w_in - (2n(w_in dot n))

@@ -137,6 +137,7 @@ bool TrimeshFace::intersectLocal(ray& r, isect& i) const
 
 		// Need to do barycentric interpolation if no per-vertex normals
 		glm::dvec3 newNorm = this->normal;
+		Material newMaterial = this->getMaterial();
 		if(parent->vertNorms) {
 			// Barycentric Interpolation
 			double topLeft = glm::dot(b - a, b - a);
@@ -163,12 +164,23 @@ bool TrimeshFace::intersectLocal(ray& r, isect& i) const
 			glm::dvec3 cNorm = (double)weights[2] * parent->normals[ids[2]];
 			newNorm = glm::normalize(aNorm + bNorm + cNorm);
 
+			if(parent->materials.size() > 0) 
+			{
+				Material material1 = *(parent->materials)[ids[0]];
+				Material material2 = *(parent->materials)[ids[1]];
+				Material material3 = *(parent->materials)[ids[2]];
+				
+				newMaterial = (double)weights[0] * material1;
+				newMaterial += (double)weights[1] * material2;
+				newMaterial += (double)weights[2] * material3;
+			}
+
 			i.setBary(weights);
 		} 
 
 		i.setObject(this);
-		i.setMaterial(this->getMaterial());
 		i.setT(t);
+		i.setMaterial(newMaterial);
 		i.setN(newNorm);
 		return true;
 	}
