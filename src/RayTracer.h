@@ -30,6 +30,7 @@ public:
 	~RayTracer();
 
 	glm::dvec3 tracePixel(int i, int j);
+	glm::dvec3 traceAAPixel(int i, int j);
 	void traceAllPixels(int width, int height);
 	glm::dvec3 traceRay(ray& r, const glm::dvec3& thresh, int depth,
 	                    double& length);

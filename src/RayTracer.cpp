@@ -34,6 +34,8 @@ bool debugMode = false;
 // enter the main ray-tracing method, getting things started by plugging
 // in an initial ray weight of (0.0,0.0,0.0) and an initial recursion depth of 0.
 
+bool aa = false; // Flag to check if antialias is needed
+
 glm::dvec3 RayTracer::trace(double x, double y)
 {
 	// Clear out the ray cache in the scene for debugging purposes,
@@ -52,19 +54,50 @@ glm::dvec3 RayTracer::trace(double x, double y)
 
 glm::dvec3 RayTracer::tracePixel(int i, int j)
 {
-	glm::dvec3 col(0,0,0);
+	glm::dvec3 col(0, 0, 0);
 
-	if( ! sceneLoaded() ) return col;
+	if (!sceneLoaded())
+		return col;
 
-	double x = double(i)/double(buffer_width);
-	double y = double(j)/double(buffer_height);
+	double x = double(i) / double(buffer_width);
+	double y = double(j) / double(buffer_height);
 
-	unsigned char *pixel = buffer.data() + ( i + j * buffer_width ) * 3;
+	unsigned char *pixel = buffer.data() + (i + j * buffer_width) * 3;
 	col = trace(x, y);
 
-	pixel[0] = (int)( 255.0 * col[0]);
-	pixel[1] = (int)( 255.0 * col[1]);
-	pixel[2] = (int)( 255.0 * col[2]);
+	pixel[0] = (int)(255.0 * col[0]);
+	pixel[1] = (int)(255.0 * col[1]);
+	pixel[2] = (int)(255.0 * col[2]);
+	return col;
+}
+
+glm::dvec3 RayTracer::traceAAPixel(int i, int j) {
+	
+	glm::dvec3 col(0, 0, 0);
+
+	if (!sceneLoaded())
+		return col;
+
+	double x = double(i) / double(buffer_width);
+	double y = double(j) / double(buffer_height);
+
+	int tempSamples = samples;
+	for (int a = 0; a < tempSamples; a++)
+	{
+		for (int b = 0; b < tempSamples; b++)
+		{
+			x = (i + double(a) / double(tempSamples)) / double(buffer_width);
+			y = (j + double(b) / double(tempSamples)) / double(buffer_height);
+			col = col + trace(x, y);
+		}
+	}
+	col = col / ((double)tempSamples * tempSamples);
+
+	unsigned char *pixel = buffer.data() + (i + j * buffer_width) * 3;
+
+	pixel[0] = (int)(255.0 * col[0]);
+	pixel[1] = (int)(255.0 * col[1]);
+	pixel[2] = (int)(255.0 * col[2]);
 	return col;
 }
 
@@ -300,6 +333,13 @@ int RayTracer::aaImage()
 	//
 	// TIP: samples and aaThresh have been synchronized with TraceUI by
 	//      RayTracer::traceSetup() function
+	for(int i = 0; i < buffer_width; i++)
+	{
+		for(int j = 0; j < buffer_height; j++)
+		{
+			traceAAPixel(i, j);
+		}
+	}
 	return 0;
 }
 
