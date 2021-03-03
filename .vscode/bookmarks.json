@@ -1,0 +1,44 @@
+{
+	"files": [
+		{
+			"path": "src/RayTracer.cpp",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/scene/material.cpp",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/scene/cubeMap.cpp",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		},
+		{
+			"path": "src/scene/light.cpp",
+			"bookmarks": [
+				{
+					"line": 0,
+					"column": 0,
+					"label": ""
+				}
+			]
+		}
+	]
+}

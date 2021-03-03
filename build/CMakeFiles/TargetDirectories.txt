@@ -1,0 +1,5 @@
+/home/govind/Documents/programming-files/cs378h/proj1/ray/build/CMakeFiles/rebuild_cache.dir
+/home/govind/Documents/programming-files/cs378h/proj1/ray/build/CMakeFiles/edit_cache.dir
+/home/govind/Documents/programming-files/cs378h/proj1/ray/build/src/CMakeFiles/rebuild_cache.dir
+/home/govind/Documents/programming-files/cs378h/proj1/ray/build/src/CMakeFiles/edit_cache.dir
+/home/govind/Documents/programming-files/cs378h/proj1/ray/build/src/CMakeFiles/ray.dir
