@@ -74,7 +74,7 @@ glm::dvec3 Material::shade(Scene* scene, const ray& r, const isect& i) const
 		ray shadowRay(P, glm::normalize(lightDir), r.getAtten(), ray::SHADOW);
 		lightColor *= pLight->shadowAttenuation(shadowRay, P);
 
-		diffuse += lightColor * glm::dot(lightDir, normal);
+		diffuse += lightColor * std::max(glm::dot(lightDir, normal), 0.0);
 		if(cos1 >= 0) {
 			diffuse = glm::dvec3(std::abs(diffuse[0]), std::abs(diffuse[1]), std::abs(diffuse[2]));
 		}		
