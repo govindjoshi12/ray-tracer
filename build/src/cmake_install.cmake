@@ -1,4 +1,4 @@
-# Install script for directory: /home/govind/Documents/programming-files/cs378h/proj1/ray/src
+# Install script for directory: /home/govind/Documents/programming-files/cs378h/ray/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
