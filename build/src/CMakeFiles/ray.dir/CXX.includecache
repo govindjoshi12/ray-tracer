@@ -1038,6 +1038,14 @@ dual_quaternion.inl
 limits
 -
 
+../third-party/glm/glm/gtx/extended_min_max.hpp
+../glm.hpp
+../third-party/glm/glm/glm.hpp
+extended_min_max.inl
+../third-party/glm/glm/gtx/extended_min_max.inl
+
+../third-party/glm/glm/gtx/extended_min_max.inl
+
 ../third-party/glm/glm/gtx/io.hpp
 ../glm.hpp
 ../third-party/glm/glm/glm.hpp
@@ -1394,6 +1402,8 @@ glm/vec3.hpp
 glm/mat3x3.hpp
 -
 
+/home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+
 /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
 algorithm
 -
@@ -1443,6 +1453,24 @@ memory
 -
 material.h
 /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+
+/home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.cpp
+cmath
+-
+scene.h
+/home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+light.h
+/home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+kdTree.h
+/home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+../ui/TraceUI.h
+/home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+glm/gtx/extended_min_max.hpp
+-
+iostream
+-
+glm/gtx/io.hpp
+-
 
 /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 algorithm
