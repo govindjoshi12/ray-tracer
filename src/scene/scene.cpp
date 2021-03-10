@@ -8,12 +8,18 @@
 #include <iostream>
 #include <glm/gtx/io.hpp>
 
+#include "BVH.h"
+
 using namespace std;
 
 bool Geometry::intersect(ray& r, isect& i) const {
-	double tmin, tmax;
-	if (hasBoundingBoxCapability() && !(bounds.intersect(r, tmin, tmax))) return false;
+	
+	// double tmin, tmax;
+	// Already taken care off in BVH Tree
+	//if (hasBoundingBoxCapability() && !(bounds.intersect(r, tmin, tmax))) return false;
+	
 	// Transform the ray into the object's local coordinate space
+
 	glm::dvec3 pos = transform->globalToLocalCoords(r.getPosition());
 	glm::dvec3 dir = transform->globalToLocalCoords(r.getPosition() + r.getDirection()) - pos;
 	double length = glm::length(dir);
@@ -96,6 +102,17 @@ Scene::Scene()
 
 Scene::~Scene()
 {
+	// We use "new" in initBVHTree
+	delete BVHTree;
+}
+
+void Scene::initBVHTree() {
+	std::vector<Geometry*> list;
+	for(auto& uptr : objects) {
+		Geometry * ptr = uptr.get();
+		list.push_back(ptr);
+	}
+	BVHTree = new BVH(list);
 }
 
 void Scene::add(Geometry* obj) {
@@ -121,16 +138,25 @@ bool Scene::intersect(ray& r, isect& i) const {
 	// Get rid of loop, and call obj->intersect
 	// on object returned by traverse. If no 
 	// object returned, return false.
-	
-	for(const auto& obj : objects) {
-		isect cur;
-		if( obj->intersect(r, cur) ) {
-			if(!have_one || (cur.getT() < i.getT())) {
-				i = cur;
-				have_one = true;
-			}
+
+	// for(const auto& obj : objects) {
+	// 	isect cur;
+	// 	if( obj->intersect(r, cur) ) {
+	// 		if(!have_one || (cur.getT() < i.getT())) {
+	// 			i = cur;
+	// 			have_one = true;
+	// 		}
+	// 	}
+	// }
+
+	ray* temp = new ray(r);
+	Geometry* geom = BVHTree->intersect(*temp);
+	if(geom != nullptr) {
+		if( geom->intersect(r, i) ) {
+			have_one = true;
 		}
 	}
+
 	if(!have_one)
 		i.setT(1000.0);
 	// if debugging,

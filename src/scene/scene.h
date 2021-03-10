@@ -5,6 +5,7 @@
 //
 
 #pragma warning(disable : 4786)
+#pragma once
 
 #ifndef __SCENE_H__
 #define __SCENE_H__
@@ -27,6 +28,8 @@
 #include <glm/matrix.hpp>
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
+
+#include "BVH.h"
 
 using std::unique_ptr;
 
@@ -263,7 +266,7 @@ public:
 	            bool actualTextures) const;
 
 	const BoundingBox& bounds() const { return sceneBounds; }
-
+	void initBVHTree();
 
 private:
 	std::vector<std::unique_ptr<Geometry>> objects;
@@ -285,6 +288,7 @@ private:
 	BoundingBox sceneBounds;
 
 	KdTree<Geometry>* kdtree;
+	BVH* BVHTree;
 
 	mutable std::mutex intersectionCacheMutex;
 

@@ -557,6 +557,33 @@ parser/Tokenizer.cpp.s:
 	cd /home/govind/Documents/programming-files/cs378h/ray/build && $(MAKE) -f src/CMakeFiles/ray.dir/build.make src/CMakeFiles/ray.dir/parser/Tokenizer.cpp.s
 .PHONY : parser/Tokenizer.cpp.s
 
+scene/BVH.o: scene/BVH.cpp.o
+
+.PHONY : scene/BVH.o
+
+# target to build an object file
+scene/BVH.cpp.o:
+	cd /home/govind/Documents/programming-files/cs378h/ray/build && $(MAKE) -f src/CMakeFiles/ray.dir/build.make src/CMakeFiles/ray.dir/scene/BVH.cpp.o
+.PHONY : scene/BVH.cpp.o
+
+scene/BVH.i: scene/BVH.cpp.i
+
+.PHONY : scene/BVH.i
+
+# target to preprocess a source file
+scene/BVH.cpp.i:
+	cd /home/govind/Documents/programming-files/cs378h/ray/build && $(MAKE) -f src/CMakeFiles/ray.dir/build.make src/CMakeFiles/ray.dir/scene/BVH.cpp.i
+.PHONY : scene/BVH.cpp.i
+
+scene/BVH.s: scene/BVH.cpp.s
+
+.PHONY : scene/BVH.s
+
+# target to generate assembly for a file
+scene/BVH.cpp.s:
+	cd /home/govind/Documents/programming-files/cs378h/ray/build && $(MAKE) -f src/CMakeFiles/ray.dir/build.make src/CMakeFiles/ray.dir/scene/BVH.cpp.s
+.PHONY : scene/BVH.cpp.s
+
 scene/bbox.o: scene/bbox.cc.o
 
 .PHONY : scene/bbox.o
@@ -1046,6 +1073,9 @@ help:
 	@echo "... parser/Tokenizer.o"
 	@echo "... parser/Tokenizer.i"
 	@echo "... parser/Tokenizer.s"
+	@echo "... scene/BVH.o"
+	@echo "... scene/BVH.i"
+	@echo "... scene/BVH.s"
 	@echo "... scene/bbox.o"
 	@echo "... scene/bbox.i"
 	@echo "... scene/bbox.s"

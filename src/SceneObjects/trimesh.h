@@ -13,6 +13,8 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/vec3.hpp>
 
+#include "../scene/BVH.h"
+
 class TrimeshFace;
 
 class Trimesh : public MaterialSceneObject {
@@ -27,6 +29,7 @@ class Trimesh : public MaterialSceneObject {
 	Normals normals;
 	Materials materials;
 	BoundingBox localBounds;
+	BVH* BVHTree;
 
 public:
 	Trimesh(Scene *scene, Material *mat, TransformNode *transform)
@@ -74,6 +77,9 @@ public:
 		localBounds = localbounds;
 		return localbounds;
 	}
+
+	void initBVHTree();
+	BVH* getTree() { return BVHTree; }  
 
 protected:
 	void glDrawLocal(int quality, bool actualMaterials,

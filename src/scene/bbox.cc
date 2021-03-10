@@ -117,3 +117,9 @@ void BoundingBox::merge(const BoundingBox& bBox)
 	dirty  = true;
 	bEmpty = false;
 }
+
+void BoundingBox::merge(const glm::dvec3 point)
+{
+	BoundingBox box = BoundingBox(point, point);
+	merge(box);
+}

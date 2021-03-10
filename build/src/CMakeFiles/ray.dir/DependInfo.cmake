@@ -20,6 +20,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/parser/ParserException.cpp.o"
   "/home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/parser/Token.cpp.o"
   "/home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/parser/Tokenizer.cpp.o"
+  "/home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/scene/BVH.cpp.o"
   "/home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.cc" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/scene/bbox.cc.o"
   "/home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/scene/camera.cpp.o"
   "/home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.cpp" "/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir/scene/cubeMap.cpp.o"

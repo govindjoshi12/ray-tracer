@@ -1,6 +1,7 @@
 #pragma once
 
 #include <glm/vec3.hpp>
+
 class ray;
 
 class BoundingBox {
@@ -65,4 +66,25 @@ public:
 	double area();
 	double volume();
 	void merge(const BoundingBox& bBox);
+
+	// Student Methods
+	// Reading through following textbook:
+	// http://www.pbr-book.org/3ed-2018/Geometry_and_Transformations/Bounding_Boxes.html#Bounds3::Diagonal
+
+	void merge(const glm::dvec3 point);
+
+	glm::dvec3 Diagonal() {
+		return bmax - bmin;
+	}
+
+	// Returns index of longest axis
+	int MaxExtent() {
+		glm::dvec3 diag = Diagonal();
+		if(diag[0] > diag[1] && diag[0] > diag[2])
+			return 0;
+		else if(diag[1] > diag[2])
+			return 1;
+		else 
+			return 2;
+	}
 };
