@@ -3057,6 +3057,7 @@ src/CMakeFiles/ray.dir/scene/scene.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
  /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
  /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
  /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h

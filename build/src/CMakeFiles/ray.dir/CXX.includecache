@@ -1765,6 +1765,8 @@ glm/gtx/io.hpp
 -
 BVH.h
 /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+../SceneObjects/Box.h
+/home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
 
 /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 algorithm

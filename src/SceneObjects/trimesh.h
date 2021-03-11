@@ -141,6 +141,7 @@ public:
 
 	BoundingBox ComputeLocalBoundingBox()
 	{
+		// printf("Stuff is happening\n");
 		BoundingBox localbounds;
 		localbounds.setMax(glm::max(parent->vertices[ids[0]],
 		                            parent->vertices[ids[1]]));
@@ -154,7 +155,8 @@ public:
 		return localbounds;
 	}
 
-	const BoundingBox &getBoundingBox() const { return localbounds; }
+	// Altered so that getBoundingBox still returns global coords
+	const BoundingBox &getLocalBoundingBox() const { return localbounds; }
 };
 
 #endif // TRIMESH_H__

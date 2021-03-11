@@ -1,0 +1,35 @@
+SBT-raytracer 1.0
+
+	camera {
+		position = ( 0,0,0 );
+		viewdir = (1, -1, -1);
+		updir = (0,1,0);
+		aspectratio = 1;
+	}
+	directional_light {
+		direction = (0, 0, -1 );
+		colour = (0.8, 0.8, 0.8);
+	}
+
+	point_light {
+		position = (-1, 1, -1);
+		colour = (1, 0.6, 0.6);
+	}
+	
+polymesh {
+  name="";
+  material={
+    diffuse=( 0.8,0.5,0.2);
+    ambient=( 0.2,0.2,0.2);
+    specular=( 0.2,0.1,0.1);
+    emissive=( 0,0,0);
+    shininess=0.2;
+    transmissive=( 0,0,0 );
+  };
+   points=( 
+	( 1, 2, 3 ), 
+	( 4, 5, 6 ),
+	( 7, 8, 9 ),
+	( 10, 11, 12 ));
+	faces=( ( 0,1,2),( 3,4,5),( 6,7,8),( 9,10,11) );
+};

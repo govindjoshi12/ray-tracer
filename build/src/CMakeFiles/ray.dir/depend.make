@@ -3056,6 +3056,7 @@ src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../third-party/glm/glm/vec2.hpp
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../third-party/glm/glm/vec3.hpp
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../third-party/glm/glm/vec4.hpp
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../third-party/glm/glm/vector_relational.hpp
+src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../src/SceneObjects/Box.h
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../src/scene/BVH.h
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../src/scene/bbox.h
 src/CMakeFiles/ray.dir/scene/scene.cpp.o: ../src/scene/camera.h

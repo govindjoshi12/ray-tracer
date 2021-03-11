@@ -267,6 +267,7 @@ public:
 
 	const BoundingBox& bounds() const { return sceneBounds; }
 	void initBVHTree();
+	void addBVHBoundingBoxes();
 
 private:
 	std::vector<std::unique_ptr<Geometry>> objects;

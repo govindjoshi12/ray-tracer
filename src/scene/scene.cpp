@@ -9,6 +9,7 @@
 #include <glm/gtx/io.hpp>
 
 #include "BVH.h"
+#include "../SceneObjects/Box.h"
 
 using namespace std;
 
@@ -113,12 +114,28 @@ void Scene::initBVHTree() {
 		list.push_back(ptr);
 	}
 	BVHTree = new BVH(list);
+	addBVHBoundingBoxes();
 }
 
 void Scene::add(Geometry* obj) {
 	obj->ComputeBoundingBox();
 	sceneBounds.merge(obj->getBoundingBox());
 	objects.emplace_back(obj);
+}
+
+void Scene::addBVHBoundingBoxes() {
+	std::vector<BoundingBox> bbList = BVHTree->getBBList();
+	for(BoundingBox b : bbList) {
+		// DO something, idk what
+		glm::dvec3 min = b.getMin();
+		glm::dvec3 max = b.getMax();
+		printf("bMin: (%f, %f, %f), bMax: (%f, %f, %f)\n", min[0], min[1], min[2], max[0], max[1], max[2]);
+
+		// Material* mat = new Material();
+		// mat->setTransmissive(glm::dvec3(1.0, 1.0, 1.0));
+		// Box* box = new Box(this, mat);
+		// add(box);
+	}
 }
 
 void Scene::add(Light* light)

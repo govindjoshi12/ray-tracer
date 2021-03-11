@@ -68,7 +68,9 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
     if(numObjects == 1) {
         // Create Leaf Node
         node->initializeLeafNode(objects[start]);
-        Geometry* geom = node->getGeom();
+
+        // Debugging
+        bbList.push_back(node->getBoundingBox());
 
         return node;
     } else {
@@ -99,12 +101,15 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
         BVHNode* left = buildTree(objects, start, mid);
         BVHNode* right = buildTree(objects, mid, end);
         node->initializeInterior(left, right);
+
+        // Debugging
+        bbList.push_back(node->getBoundingBox());
     }
     
     return node;
 }
 
-Geometry* BVH::intersect(const ray& r) {
+Geometry* BVH::intersect(ray& r) {
     IsectHelperStruct result = traverse(r, root);
     return result.object;
 }
@@ -119,7 +124,7 @@ Geometry* BVH::intersect(const ray& r) {
 // array representation but skipping
 // that to save time and am unsure how
 // generalize to trimesh faces
-IsectHelperStruct BVH::traverse(const ray& r, BVHNode* node) {
+IsectHelperStruct BVH::traverse(ray& r, BVHNode* node) {
 
     IsectHelperStruct ret = {nullptr, DBL_MAX};
     if(node == nullptr)
@@ -134,8 +139,13 @@ IsectHelperStruct BVH::traverse(const ray& r, BVHNode* node) {
 
     // node is a leaf node
     if(node->getGeom() != nullptr) {
-        ret.object = node->getGeom();
-        ret.tMin = tMin;
+
+        isect dummy;
+        if(node->getGeom()->intersect(r,dummy))
+        {
+            ret.object = node->getGeom();
+            ret.tMin = tMin;
+        }
         // printf("Found Geom: %p\n", ret.object);
         return ret;
     }
@@ -170,6 +180,7 @@ void BVHNode::initializeLeafNode(Geometry* geomObject) {
 
     geom = geomObject;
     boundingBox = geomObject->getBoundingBox();
+
 }
 
 void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode) {
@@ -179,4 +190,15 @@ void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode) {
     // New bounding box which compasses objects of both nodes
     boundingBox = leftNode->boundingBox;
     boundingBox.merge(rightNode->boundingBox);
+}
+
+// BVHNode Methods
+void BVHNode::initializeLeafNode(Geometry* geomObject, BoundingBox bb) {
+    initializeLeafNode(geomObject);
+    boundingBox = bb;
+}
+
+void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode, BoundingBox bb) {
+    initializeInterior(left, right);
+    boundingBox = bb;
 }
