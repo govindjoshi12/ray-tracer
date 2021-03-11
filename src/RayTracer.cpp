@@ -19,6 +19,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <random>
+
 // #include <future>
 
 using namespace std;
@@ -35,6 +37,8 @@ bool debugMode = false;
 // in an initial ray weight of (0.0,0.0,0.0) and an initial recursion depth of 0.
 
 bool aa = false; // Flag to check if antialias is needed
+bool jittered = false;
+bool adaptive = false;
 
 glm::dvec3 RayTracer::trace(double x, double y)
 {
@@ -99,6 +103,51 @@ glm::dvec3 RayTracer::traceAAPixel(int i, int j) {
 	pixel[1] = (int)(255.0 * col[1]);
 	pixel[2] = (int)(255.0 * col[2]);
 	return col;
+}
+
+// Should go right under traceAAPixel
+glm::dvec3 RayTracer::traceJitteredPixel(int i, int j)
+{
+    //http://hpcg.purdue.edu/bbenes/classes/CGT511/lectures/CGT511-06-Aliasing.pdf
+    glm::dvec3 col(0, 0, 0);
+
+    if (!sceneLoaded())
+        return col;
+
+    std::random_device r;                // Used to get random numbers from std
+    std::default_random_engine eng(r()); // Engine to use random number
+    std::normal_distribution<> d(0, 1);  // Sets the range of random number from 0-1
+
+    double x = double(i) / double(buffer_width);
+    double y = double(j) / double(buffer_height);
+    double subX = (1.0 / (buffer_width * samples)); // Sub pixel of x size
+    double subY = (1.0 / (buffer_height * samples));
+
+    int tempSamples = samples;
+    for (int a = 0; a < tempSamples; a++) // Number of samples in x and y direction
+    {
+        for (int b = 0; b < tempSamples; b++)
+        {
+            double randX = glm::clamp(d(eng), -3.0, 3.0) / 6;
+            double randY = glm::clamp(d(eng), -3.0, 3.0) / 6;
+
+            double tempX = (a + 0.5 + randX) * subX + (double)(x);
+            double tempy = (b + 0.5 + randY) * subY + (double)(y);
+            col = col + trace(x, y);
+        }
+    }
+
+    col = col / ((double)tempSamples * tempSamples); // Gets the avg color
+    unsigned char *pixel = buffer.data() + (i + j * buffer_width) * 3;
+
+    pixel[0] = (int)(255.0 * col[0]);
+    pixel[1] = (int)(255.0 * col[1]);
+    pixel[2] = (int)(255.0 * col[2]);
+    return col;
+}
+
+glm::dvec3 RayTracer::traceAdaptivePixel(int i, int j) {
+	return glm::dvec3(0.0, 0.0, 0.0);
 }
 
 #define VERBOSE 0
@@ -335,19 +384,26 @@ void RayTracer::traceImage(int w, int h)
 
 int RayTracer::aaImage()
 {
-	// YOUR CODE HERE
-	// FIXME: Implement Anti-aliasing here
-	//
-	// TIP: samples and aaThresh have been synchronized with TraceUI by
-	//      RayTracer::traceSetup() function
-	for(int i = 0; i < buffer_width; i++)
-	{
-		for(int j = 0; j < buffer_height; j++)
-		{
-			traceAAPixel(i, j);
-		}
-	}
-	return 0;
+
+    for (int i = 0; i < buffer_width; i++)
+    {
+        for (int j = 0; j < buffer_height; j++)
+        {
+            if (adaptive)
+            {
+                traceAdaptivePixel(i, j);
+            }
+            else if (jittered)
+            {
+                traceJitteredPixel(i, j);
+            }
+            else if (aa)
+            {
+                traceAAPixel(i, j);
+            }
+        }
+    }
+    return 0;
 }
 
 bool RayTracer::checkRender()

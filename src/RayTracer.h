@@ -70,6 +70,9 @@ private:
 	int samples;
 	std::unique_ptr<Scene> scene;
 
+	glm::dvec3 traceJitteredPixel(int i, int j);
+	glm::dvec3 traceAdaptivePixel(int i, int j);
+
 	bool m_bBufferReady;
 
 };

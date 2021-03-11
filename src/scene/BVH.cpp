@@ -74,7 +74,8 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
     int numObjects = end - start;
     if(numObjects == 1) {
         // Create Leaf Node
-        node->initializeLeafNode(objects[start], bounds);
+        // node->initializeLeafNode(objects[start], bounds);
+        node->initializeLeafNode(objects[start]);
         return node;
     } else {
 
@@ -104,7 +105,8 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
 
         BVHNode* left = buildTree(objects, start, mid);
         BVHNode* right = buildTree(objects, mid, end);
-        node->initializeInterior(left, right, bounds);
+        // node->initializeInterior(left, right, bounds);
+        node->initializeInterior(left, right);
     }
     
     return node;
