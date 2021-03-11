@@ -64,14 +64,20 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
                         int start, int end) {
     BVHNode *node = new BVHNode();
 
+    // Compute Bounding Box based on objects in list, top-down
+    BoundingBox bounds = objects[start]->getBoundingBox();
+    for(int i = start; i < end; i++)
+    {
+        bounds.merge(objects[i]->getBoundingBox());
+    }
+
     int numObjects = end - start;
     if(numObjects == 1) {
         // Create Leaf Node
-        node->initializeLeafNode(objects[start]);
-        Geometry* geom = node->getGeom();
-
+        node->initializeLeafNode(objects[start], bounds);
         return node;
     } else {
+
         // Splitting against longest axis
         BoundingBox centerBoundingBox = BoundingBox();
         for(int i = start; i < end; i++) {
@@ -98,15 +104,19 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
 
         BVHNode* left = buildTree(objects, start, mid);
         BVHNode* right = buildTree(objects, mid, end);
-        node->initializeInterior(left, right);
+        node->initializeInterior(left, right, bounds);
     }
     
     return node;
 }
 
-Geometry* BVH::intersect(const ray& r) {
-    IsectHelperStruct result = traverse(r, root);
-    return result.object;
+bool BVH::intersect(ray& r, isect& i) {
+    IsectHelperStruct result = traverse(r, i, root);
+    if(result.object != nullptr) {
+        i = result.i;
+        return true;
+    }
+    return false;
 }
 
 // TODO: BVH::traverse(ray r);
@@ -119,7 +129,7 @@ Geometry* BVH::intersect(const ray& r) {
 // array representation but skipping
 // that to save time and am unsure how
 // generalize to trimesh faces
-IsectHelperStruct BVH::traverse(const ray& r, BVHNode* node) {
+IsectHelperStruct BVH::traverse(ray& r, isect& i, BVHNode* node) {
 
     IsectHelperStruct ret = {nullptr, DBL_MAX};
     if(node == nullptr)
@@ -132,21 +142,34 @@ IsectHelperStruct BVH::traverse(const ray& r, BVHNode* node) {
     if(!intersect)
         return ret;
 
+    ret.tMin = tMin;
+    // printf("tMin: %f\n", tMin);
+
     // node is a leaf node
     if(node->getGeom() != nullptr) {
-        ret.object = node->getGeom();
-        ret.tMin = tMin;
-        // printf("Found Geom: %p\n", ret.object);
+        // Finally found an actual intersection
+        if(node->getGeom()->intersect(r, i)) {
+            // printf("Intersections galore!\n");
+            ret.object = node->getGeom();
+            ret.i = i;
+        }
         return ret;
+        // printf("Found Geom: %p\n", ret.object);
     }
+
+    // if(node->getLeft() == nullptr && node->getRight() == nullptr)
+    //     printf("This should never happen.\n");
 
     // There was an intersection, but not a leaf.
     // Therefore, need to travel deeper down the tree
-    IsectHelperStruct leftResult = traverse(r, node->getLeft());
-    IsectHelperStruct rightResult = traverse(r, node->getRight());
+    IsectHelperStruct leftResult = traverse(r, i, node->getLeft());
+    IsectHelperStruct rightResult = traverse(r, i, node->getRight());
 
     if(leftResult.object == nullptr && rightResult.object == nullptr)
+    {
+        // Ray didn't hit anything after current intersection
         return ret;
+    }
     else if(leftResult.object != nullptr && rightResult.object == nullptr) {
         return leftResult;
     } else if(leftResult.object == nullptr && rightResult.object != nullptr) {
@@ -165,6 +188,7 @@ void BVHNode::initializeLeafNode(Geometry* geomObject) {
     
     if(Trimesh* trimesh = dynamic_cast<Trimesh*>(geomObject)) {
         // geomObject was safely casted to Trimesh
+        // printf("Making the trimesh BVH\n");
         trimesh->initBVHTree();
     } 
 
@@ -172,6 +196,12 @@ void BVHNode::initializeLeafNode(Geometry* geomObject) {
     boundingBox = geomObject->getBoundingBox();
 }
 
+void BVHNode::initializeLeafNode(Geometry* geomObject, BoundingBox bb) {
+    initializeLeafNode(geomObject);
+    boundingBox = bb;
+}
+
+// Computes bounding box bottom-up 
 void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode) {
     left = leftNode;
     right = rightNode;
@@ -179,4 +209,13 @@ void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode) {
     // New bounding box which compasses objects of both nodes
     boundingBox = leftNode->boundingBox;
     boundingBox.merge(rightNode->boundingBox);
+}
+
+// Compute Bounding Box top-down outside this method
+// then pass it in  here
+void BVHNode::initializeInterior(BVHNode *leftNode, BVHNode *rightNode, BoundingBox bb) {
+    left = leftNode;
+    right = rightNode;
+
+    boundingBox = bb;
 }

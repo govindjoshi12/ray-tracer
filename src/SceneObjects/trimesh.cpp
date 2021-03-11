@@ -47,6 +47,7 @@ bool Trimesh::addFace(int a, int b, int c)
 	TrimeshFace* newFace = new TrimeshFace(
 	        scene, new Material(*this->material), this, a, b, c);
 	newFace->setTransform(this->transform);
+	newFace->ComputeBoundingBox();
 	if (!newFace->degen)
 		faces.push_back(newFace);
 	else
@@ -72,26 +73,11 @@ const char* Trimesh::doubleCheck()
 bool Trimesh::intersectLocal(ray& r, isect& i) const
 {
 	bool have_one = false;
-	// for (auto face : faces) {
-	// 	isect cur;
-	// 	if (face->intersectLocal(r, cur)) {
-	// 		if (!have_one || (cur.getT() < i.getT())) {
-	// 			i = cur;
-	// 			have_one = true;
-	// 		}
-	// 	}
-	// }
+	isect temp;
 
-	ray* temp = new ray(r);
-	Geometry* geom = BVHTree->intersect(*temp);
-	// Guarantee that this cast will work because
-	// BVHTree in trimesh is populated only with
-	// trimeshFaces
-	if(geom != nullptr) {
-		TrimeshFace* trimeshFace = dynamic_cast<TrimeshFace*>(geom);
-		if(trimeshFace != nullptr && trimeshFace->intersectLocal(r, i)) {
-			have_one = true;
-		}
+	if(BVHTree->intersect(r, temp)) {
+		i = temp;
+		have_one = true;
 	}
 
 	if (!have_one)

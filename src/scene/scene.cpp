@@ -20,6 +20,8 @@ bool Geometry::intersect(ray& r, isect& i) const {
 	
 	// Transform the ray into the object's local coordinate space
 
+	// printf("Im doing stuff\n");
+
 	glm::dvec3 pos = transform->globalToLocalCoords(r.getPosition());
 	glm::dvec3 dir = transform->globalToLocalCoords(r.getPosition() + r.getDirection()) - pos;
 	double length = glm::length(dir);
@@ -139,22 +141,10 @@ bool Scene::intersect(ray& r, isect& i) const {
 	// on object returned by traverse. If no 
 	// object returned, return false.
 
-	// for(const auto& obj : objects) {
-	// 	isect cur;
-	// 	if( obj->intersect(r, cur) ) {
-	// 		if(!have_one || (cur.getT() < i.getT())) {
-	// 			i = cur;
-	// 			have_one = true;
-	// 		}
-	// 	}
-	// }
-
-	ray* temp = new ray(r);
-	Geometry* geom = BVHTree->intersect(*temp);
-	if(geom != nullptr) {
-		if( geom->intersect(r, i) ) {
-			have_one = true;
-		}
+	isect temp;
+	if(BVHTree->intersect(r, temp)) {
+		i = temp;
+		have_one = true;
 	}
 
 	if(!have_one)

@@ -1,0 +1,176 @@
+SBT-raytracer 1.0
+
+	camera {
+		position = ( 0, 4, 12 );
+		aspectratio = 1;
+	}
+	directional_light {
+		direction = (-20,-30,-50);
+		colour = (.9,.9,.9);
+	}
+
+    // Sun
+    translate(15.5,21.5,-30,
+    scale(12,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (1.0,0.9,0);
+        specular = (1.0,0.9,0);
+        shininess = 55;
+      } 
+	}))
+
+    // Tree 1
+    translate(0,1.25,0,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+  
+    translate(0,0,0,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 2
+    translate(-2,1.25,-1,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(-2,0,-1,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 3
+    translate(2,1.25,-2,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(2,0,-2,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 4
+    translate(-4,1.25,-4,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(-4,0,-4,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 5
+    translate(4,1.25,-4,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(4,0,-4,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 6
+    translate(-6,1.25,-2,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(-6,0,-2,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))
+
+    // Tree 7
+    translate(6,1.25,-2,
+    scale(1.25,
+    sphere {
+      material = { 
+        ambient = (0, 1, 1);
+        diffuse = (0,0.4,0);
+        specular = (0,0.4,0);
+        shininess = 5;
+      } 
+	}))
+    
+    translate(6,0,-2,
+    scale( 1,2,1,
+    box { 
+      material = { 
+        diffuse = (0.5, .25, 0.0);
+        specular = (0.9,0.4,0.0);
+        shininess = 50;
+      };
+    }))

@@ -21,8 +21,8 @@ public:
 
     BVHNode* buildTree(std::vector<Geometry*> &objects, 
                         int start, int end);
-    Geometry* intersect(const ray& r);
-    IsectHelperStruct traverse(const ray& r, BVHNode* node);
+    bool intersect(ray& r, isect& i);
+    IsectHelperStruct traverse(ray& r, isect& i, BVHNode* node);
     void freeNodes(BVHNode* node);
     BVHNode* getRoot() { return root; }
 
@@ -34,6 +34,7 @@ private:
 struct IsectHelperStruct {
     Geometry* object;
     double tMin;
+    isect i;
 };
 
 class BVHNode {
@@ -49,7 +50,10 @@ public:
     ~BVHNode() { }
 
     void initializeLeafNode(Geometry* geomObject);
+    void initializeLeafNode(Geometry* geomObject, BoundingBox bb);
+
     void initializeInterior(BVHNode *leftNode, BVHNode *rightNode);
+    void initializeInterior(BVHNode *leftNode, BVHNode *rightNode, BoundingBox bb);
 
     BoundingBox getBoundingBox() { return boundingBox; }
     Geometry* getGeom() { return geom; }

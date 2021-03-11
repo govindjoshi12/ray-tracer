@@ -1,0 +1,131 @@
+SBT-raytracer 1.0
+
+	camera {
+		position = ( 160,0,450 );
+		aspectratio = 1;
+	}
+
+  directional_light {
+		direction = (150, 0, -500 );
+		colour = (0.8, 0.8, 0.8);
+	}
+
+  // Sun
+  translate(-650,0,0,
+  scale(546.49,
+  sphere {
+    material = { 
+      diffuse = (1.0,0.9,0);
+      specular = (1.0,0.9,0);
+      shininess = 100;
+      transmissive = (0, 0, 0);
+    } 
+	}))
+
+  // Merc
+  translate(-47,0,0,
+  scale(1.9149,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.859,0.808,0.792);
+      specular = (.859,0.808,0.792);
+      shininess = 100;
+    } 
+	}))
+
+  // Venus (227,187,118)
+  translate(-40,0,0,
+  scale(4.7496,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.890,0.733,0.463);
+      specular = (.890,0.733,0.463);
+      shininess = 100;
+    } 
+	}))
+
+  // Earth (10, 20, 116)
+  translate(-30,0,0,
+  scale(5,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.039,0.078,0.455);
+      specular = (.039,0.078,0.455);
+      shininess = 100;
+    } 
+	}))
+
+  // Mars  	(193,68,14)
+  translate(-20,0,0,
+  scale(2.6601,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.757,0.266,0.059);
+      specular = (.757,0.266,0.059);
+      shininess = 100;
+    } 
+	}))
+
+  // Jupiter (180, 92, 61)
+  translate(75,0,0,
+  scale(54.867,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.705,0.361,0.239);
+      specular = (.705,0.361,0.239);
+      shininess = 100;
+    } 
+	}))
+
+  // Sat (234,214,184)
+  translate(185,0,0,
+  scale(45.701,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.917,0.839,0.721);
+      specular = (.917,0.839,0.721);
+      shininess = 100;
+    } 
+	}))
+
+  // Urn (187, 225, 228)
+  translate(270,0,0,
+  scale(19.904,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.733,0.883,0.894);
+      specular = (.733,0.883,0.894);
+      shininess = 100;
+    } 
+	}))
+
+  // Nep (75, 112, 221)
+  translate(330,0,0,
+  scale(19.323,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.294,0.439,0.867);
+      specular = (.294,0.439,0.867);
+      shininess = 100;
+    } 
+	}))
+
+  // Pluto (150,133,112)
+  translate(370,0,0,
+  scale(0.92921,
+  sphere {
+    material = { 
+      ambient = (0, 1, 1);
+      diffuse = (.588,0.522,0.439);
+      specular = (.294,0.439,0.867);
+      shininess = 100;
+    } 
+	}))
