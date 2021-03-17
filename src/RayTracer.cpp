@@ -11,6 +11,7 @@
 #include "parser/Parser.h"
 
 #include "ui/TraceUI.h"
+#include "ui/GraphicalUI.h"
 #include <cmath>
 #include <algorithm>
 #include <glm/glm.hpp>
@@ -36,7 +37,7 @@ bool debugMode = false;
 // enter the main ray-tracing method, getting things started by plugging
 // in an initial ray weight of (0.0,0.0,0.0) and an initial recursion depth of 0.
 
-bool aa = false; // Flag to check if antialias is needed
+bool aa = true; // Flag to check if antialias is needed
 bool jittered = false;
 bool adaptive = false;
 
@@ -133,7 +134,7 @@ glm::dvec3 RayTracer::traceJitteredPixel(int i, int j)
 
             double tempX = (a + 0.5 + randX) * subX + (double)(x);
             double tempy = (b + 0.5 + randY) * subY + (double)(y);
-            col = col + trace(x, y);
+            col = col + trace(tempX, tempy);
         }
     }
 
@@ -146,8 +147,48 @@ glm::dvec3 RayTracer::traceJitteredPixel(int i, int j)
     return col;
 }
 
-glm::dvec3 RayTracer::traceAdaptivePixel(int i, int j) {
-	return glm::dvec3(0.0, 0.0, 0.0);
+glm::dvec3 RayTracer::traceAdaptivePixelHelper(int l, int b, int r, int t, int num)
+{
+    if (r > buffer_width || t > buffer_width)
+    {
+        return trace(l, b);
+    }
+    int tempSamples = samples;
+    double threshold = traceUI->getAaThreshold(); // Default threshold
+	// std::cout << "Threshold " << threshold  << std::endl;
+    double middleX = l + (r - l) / 2.0;
+    double middleY = b + (t - b) / 2.0;
+    auto middle = trace(middleX / (double)buffer_width, middleY / (double)buffer_height);
+    auto tr = trace(r / (double)buffer_width, t / (double)buffer_height);
+    auto br = trace(r / (double)buffer_width, b / (double)buffer_height);
+    auto bl = trace(l / (double)buffer_width, b / (double)buffer_height);
+    auto tl = trace(l / (double)buffer_width, t / (double)buffer_height);
+
+    glm::dvec3 middleTR, middleBR, middleBL, middleTL;
+    bool thresholdTR, thresholdBR, thresholdBL, thresholdTL;
+
+    thresholdTR = glm::length(middle - tr) / glm::pow(3, 0.5) > threshold && num < tempSamples;
+    thresholdTR ? middleTR = traceAdaptivePixelHelper(middleX, middleY, r, t, num+1) : middleTR = (middle + tr) / 2.0;
+
+    thresholdBR = glm::length(middle - br) / glm::pow(3, 0.5) > threshold && num < tempSamples;
+    thresholdBR ? middleBR = traceAdaptivePixelHelper(middleX, b, r, middleY, num+1) : middleBR = (middle + br) / 2.0;
+
+    thresholdBL = glm::length(middle - bl) / glm::pow(3, 0.5) > threshold && num < tempSamples;
+    thresholdBL ? middleBL = traceAdaptivePixelHelper(l, b, middleX, middleY, num+1) : middleBL = (middle + bl) / 2.0;
+
+    thresholdTL = glm::length(middle - tl) / glm::pow(3, 0.5) > threshold && num < tempSamples;
+    thresholdTL ? middleTL = traceAdaptivePixelHelper(l, middleY, middleX, t, num+1) : middleTL = (middle + tl) / 2.0;
+
+    return (middleTR + middleBR + middleBL + middleTL) / 4.0;
+}
+
+glm::dvec3 RayTracer::traceAdaptivePixel(int i, int j)
+{
+    glm::dvec3 col(0, 0, 0);
+    if (!sceneLoaded())
+        return col;
+    col = traceAdaptivePixelHelper(i, j, i++, j++, 0);
+    return col;
 }
 
 #define VERBOSE 0

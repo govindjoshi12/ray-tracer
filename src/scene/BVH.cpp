@@ -9,11 +9,7 @@ BVH::BVH(std::vector<Geometry*> &objects)
     if(objects.size() > 0)
         root = buildTree(objects, 0, objects.size());
     else   
-        root = new BVHNode();
-    
-    // Maintain a orderedObjects list which places leaf
-    // nodes in contiguous segments of memory
-    // objects.swap(orderedObjects);   
+        root = new BVHNode(); 
 }
 
 BVH::BVH()
@@ -74,8 +70,8 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
     int numObjects = end - start;
     if(numObjects == 1) {
         // Create Leaf Node
-        // node->initializeLeafNode(objects[start], bounds);
-        node->initializeLeafNode(objects[start]);
+        node->initializeLeafNode(objects[start], bounds);
+        // node->initializeLeafNode(objects[start]);
         return node;
     } else {
 
@@ -105,8 +101,8 @@ BVHNode* BVH::buildTree(std::vector<Geometry*> &objects,
 
         BVHNode* left = buildTree(objects, start, mid);
         BVHNode* right = buildTree(objects, mid, end);
-        // node->initializeInterior(left, right, bounds);
-        node->initializeInterior(left, right);
+        node->initializeInterior(left, right, bounds);
+        // node->initializeInterior(left, right);
     }
     
     return node;
@@ -116,8 +112,10 @@ bool BVH::intersect(ray& r, isect& i) {
     IsectHelperStruct result = traverse(r, i, root);
     if(result.object != nullptr) {
         i = result.i;
+        // printf("intersection.\n");
         return true;
     }
+    // printf("no inter\n");
     return false;
 }
 
@@ -133,7 +131,7 @@ bool BVH::intersect(ray& r, isect& i) {
 // generalize to trimesh faces
 IsectHelperStruct BVH::traverse(ray& r, isect& i, BVHNode* node) {
 
-    IsectHelperStruct ret = {nullptr, DBL_MAX};
+    IsectHelperStruct ret = {.object = nullptr, .t = DBL_MIN};
     if(node == nullptr)
         return ret;
 
@@ -144,15 +142,21 @@ IsectHelperStruct BVH::traverse(ray& r, isect& i, BVHNode* node) {
     if(!intersect)
         return ret;
 
-    ret.tMin = tMin;
-    // printf("tMin: %f\n", tMin);
-
+    // If ray starts inside box, then tMin doesn't makes sense
+    // Ray epsilon/Floating Point errors?
+    ret.t = tMin;
+    if(node->getBoundingBox().containsPoint(r.getPosition()))
+        ret.t = tMax;
     // node is a leaf node
     if(node->getGeom() != nullptr) {
         // Finally found an actual intersection
         if(node->getGeom()->intersect(r, i)) {
-            // printf("Intersections galore!\n");
+            
+            // Just store intersection time t
+            // rather than fiddling with tMin and tMax
+            // updated by bounding box intersect. 
             ret.object = node->getGeom();
+            ret.t = i.getT();
             ret.i = i;
         }
         return ret;
@@ -177,11 +181,11 @@ IsectHelperStruct BVH::traverse(ray& r, isect& i, BVHNode* node) {
     } else if(leftResult.object == nullptr && rightResult.object != nullptr) {
         return rightResult;
     } else {
-        // Return the object which was hit first/earlier
-        if(rightResult.tMin < leftResult.tMin)
-            return rightResult;
-        else
+        // Return the object which was hit first/earlier        
+        if(leftResult.t <= rightResult.t)
             return leftResult;
+        else
+            return rightResult;
     }
 }
 

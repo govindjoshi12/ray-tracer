@@ -123,3 +123,12 @@ void BoundingBox::merge(const glm::dvec3 point)
 	BoundingBox box = BoundingBox(point, point);
 	merge(box);
 }
+
+bool BoundingBox::containsPoint(glm::dvec3 point) {
+	return bmin[0] <= point[0] 
+	&& bmin[1] <= point[1]
+	&& bmin[2] <= point[2]
+	&& bmax[0] >= point[0]
+	&& bmax[1] >= point[1]
+	&& bmax[2] >= point[2];
+}

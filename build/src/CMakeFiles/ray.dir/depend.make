@@ -221,7 +221,12 @@ src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/scene/light.h
 src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/scene/material.h
 src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/scene/ray.h
 src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/scene/scene.h
+src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/CubeMapChooser.h
+src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/GraphicalUI.h
+src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/TraceGLWindow.h
 src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/TraceUI.h
+src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/debuggingView.h
+src/CMakeFiles/ray.dir/RayTracer.cpp.o: ../src/ui/debuggingWindow.h
 
 src/CMakeFiles/ray.dir/SceneObjects/Box.cpp.o: ../third-party/glm/glm/common.hpp
 src/CMakeFiles/ray.dir/SceneObjects/Box.cpp.o: ../third-party/glm/glm/detail/_fixes.hpp

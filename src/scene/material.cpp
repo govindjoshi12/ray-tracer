@@ -117,9 +117,9 @@ glm::dvec3 TextureMap::getMappedValue(const glm::dvec2& coord) const
 	double v = coord[1] * height;
 	
 	double u1 = std::floor(u);
-	double u2 = std::ceil(u);
+	double u2 = u1 + 1;
 	double v1 = std::floor(v);
-	double v2 = std::ceil(v);
+	double v2 = v1 + 1;
 
 	double alphaU = (u2 - u) / (u2 - u1);
 	double betaU = (u - u1) / (u2 - u1);
@@ -136,6 +136,8 @@ glm::dvec3 TextureMap::getMappedValue(const glm::dvec2& coord) const
 						+ betaV * (alphaU * colorD + betaU * colorC);
 
 	return finalColor;
+
+	// return getPixelAt(std::floor(u), std::floor(v));
 }
 
 glm::dvec3 TextureMap::getPixelAt(int x, int y) const
@@ -144,14 +146,19 @@ glm::dvec3 TextureMap::getPixelAt(int x, int y) const
 	//
 	// In order to add texture mapping support to the
 	// raytracer, you need to implement this function.
-	if(data.empty()) {
-		return glm::dvec3(1.0, 1.0, 1.0); 
-	}
+	// if(data.empty()) {
+	// 	return glm::dvec3(1.0, 1.0, 1.0); 
+	// }
 
 	x = glm::clamp(x, 0, width);
 	y = glm::clamp(y, 0, height);
 
 	glm::dvec3 colorC;
+	// Compute index of 1D array which 
+	// represents the image pixels.
+	// Multiply by the three because 
+	// values for each 3 color channels
+	// stored in data.
 	int padding = (x + (y * width)) * 3;
 	auto pixel = data.data() + padding;
 

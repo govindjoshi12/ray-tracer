@@ -1,5 +1,5 @@
-/home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/build/CMakeFiles/rebuild_cache.dir
-/home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/build/CMakeFiles/edit_cache.dir
-/home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/build/src/CMakeFiles/rebuild_cache.dir
-/home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/build/src/CMakeFiles/edit_cache.dir
-/home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/build/src/CMakeFiles/ray.dir
+/home/govind/Documents/programming-files/cs378h/ray/build/CMakeFiles/rebuild_cache.dir
+/home/govind/Documents/programming-files/cs378h/ray/build/CMakeFiles/edit_cache.dir
+/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/rebuild_cache.dir
+/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/edit_cache.dir
+/home/govind/Documents/programming-files/cs378h/ray/build/src/CMakeFiles/ray.dir

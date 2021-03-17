@@ -6,7 +6,7 @@
 #include "bbox.h"
 #include "ray.h"
 
-// Forward Declaring this class
+// Forward Declaring these classes
 class Geometry;
 class BVHNode;
 class BVH;
@@ -31,9 +31,15 @@ private:
     int totalNodes;
 };
 
+// This struct is useful to prevent 
+// calling object->intersect twice
+// after the right object is chosen,
+// and it is necessary to compare 
+// t values when both subtrees
+// return valid intersected objects.
 struct IsectHelperStruct {
     Geometry* object;
-    double tMin;
+    double t;
     isect i;
 };
 

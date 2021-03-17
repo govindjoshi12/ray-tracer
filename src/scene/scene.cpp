@@ -34,6 +34,7 @@ bool Geometry::intersect(ray& r, isect& i) const {
 	bool rtrn = false;
 	if (intersectLocal(r, i))
 	{
+		// printf("Local intersction\n");
 		// Transform the intersection point & normal returned back into global space.
 		i.setN(transform->localToGlobalCoordsNormal(i.getN()));
 		i.setT(i.getT()/length);

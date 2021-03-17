@@ -72,6 +72,7 @@ public:
 	// http://www.pbr-book.org/3ed-2018/Geometry_and_Transformations/Bounding_Boxes.html#Bounds3::Diagonal
 
 	void merge(const glm::dvec3 point);
+	bool containsPoint(glm::dvec3 point);
 
 	glm::dvec3 Diagonal() {
 		return bmax - bmin;

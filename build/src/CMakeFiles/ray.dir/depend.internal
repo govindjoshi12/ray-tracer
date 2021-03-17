@@ -200,29 +200,34 @@ src/CMakeFiles/ray.dir/RayTracer.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Box.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cone.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cylinder.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Sphere.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Square.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Parser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Tokenizer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cone.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cylinder.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Sphere.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Square.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Parser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/SceneObjects/Box.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -373,14 +378,14 @@ src/CMakeFiles/ray.dir/SceneObjects/Box.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Box.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Box.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/SceneObjects/Cone.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -531,14 +536,14 @@ src/CMakeFiles/ray.dir/SceneObjects/Cone.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cone.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cone.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cone.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cone.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/SceneObjects/Cylinder.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -689,14 +694,14 @@ src/CMakeFiles/ray.dir/SceneObjects/Cylinder.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cylinder.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cylinder.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cylinder.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cylinder.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/SceneObjects/Sphere.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -896,14 +901,14 @@ src/CMakeFiles/ray.dir/SceneObjects/Sphere.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Sphere.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Sphere.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Sphere.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Sphere.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/SceneObjects/Square.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1054,14 +1059,14 @@ src/CMakeFiles/ray.dir/SceneObjects/Square.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Square.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Square.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Square.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Square.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/SceneObjects/trimesh.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1261,30 +1266,30 @@ src/CMakeFiles/ray.dir/SceneObjects/trimesh.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/fileio/bitmap.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/bitmap.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/bitmap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/bitmap.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/bitmap.h
 src/CMakeFiles/ray.dir/fileio/buffer.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.h
 src/CMakeFiles/ray.dir/fileio/images.cc.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/bitmap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/images.cc
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/images.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/pngimage.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/bitmap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/images.cc
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/images.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/pngimage.h
 src/CMakeFiles/ray.dir/fileio/pngimage.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/pngimage.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/pngimage.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/pngimage.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/pngimage.h
 src/CMakeFiles/ray.dir/main.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1435,18 +1440,18 @@ src/CMakeFiles/ray.dir/main.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/main.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CommandLineUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CubeMapChooser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/GraphicalUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceGLWindow.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/main.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CommandLineUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/parser/Parser.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1610,43 +1615,43 @@ src/CMakeFiles/ray.dir/parser/Parser.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Box.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cone.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cylinder.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Sphere.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Square.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Parser.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Parser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Tokenizer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cone.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cylinder.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Sphere.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Square.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Parser.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Parser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/parser/ParserException.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Tokenizer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.h
 src/CMakeFiles/ray.dir/parser/Token.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.h
 src/CMakeFiles/ray.dir/parser/Tokenizer.cpp.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/buffer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/ParserException.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Token.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Tokenizer.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/parser/Tokenizer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/buffer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/ParserException.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Token.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/parser/Tokenizer.h
 src/CMakeFiles/ray.dir/scene/BVH.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1808,15 +1813,15 @@ src/CMakeFiles/ray.dir/scene/BVH.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
 src/CMakeFiles/ray.dir/scene/bbox.cc.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -1967,10 +1972,10 @@ src/CMakeFiles/ray.dir/scene/bbox.cc.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.cc
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.cc
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
 src/CMakeFiles/ray.dir/scene/camera.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -2121,11 +2126,11 @@ src/CMakeFiles/ray.dir/scene/camera.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/scene/cubeMap.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -2276,11 +2281,11 @@ src/CMakeFiles/ray.dir/scene/cubeMap.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/scene/light.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -2480,15 +2485,15 @@ src/CMakeFiles/ray.dir/scene/light.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/scene/material.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -2688,16 +2693,16 @@ src/CMakeFiles/ray.dir/scene/material.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/images.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/images.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/scene/ray.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -2848,14 +2853,14 @@ src/CMakeFiles/ray.dir/scene/ray.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/scene/scene.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3057,16 +3062,16 @@ src/CMakeFiles/ray.dir/scene/scene.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/ui/CommandLineUI.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3217,14 +3222,14 @@ src/CMakeFiles/ray.dir/ui/CommandLineUI.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/images.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CommandLineUI.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CommandLineUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/images.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CommandLineUI.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CommandLineUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
 src/CMakeFiles/ray.dir/ui/CubeMapChooser.cxx.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3375,17 +3380,17 @@ src/CMakeFiles/ray.dir/ui/CubeMapChooser.cxx.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CubeMapChooser.cxx
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CubeMapChooser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/GraphicalUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceGLWindow.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.cxx
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/ui/GraphicalUI.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3536,17 +3541,17 @@ src/CMakeFiles/ray.dir/ui/GraphicalUI.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CubeMapChooser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/GraphicalUI.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/GraphicalUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceGLWindow.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/ui/ModelerCamera.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3710,8 +3715,8 @@ src/CMakeFiles/ray.dir/ui/ModelerCamera.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/ModelerCamera.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/ModelerCamera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/ModelerCamera.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/ModelerCamera.h
 src/CMakeFiles/ray.dir/ui/TraceGLWindow.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -3862,18 +3867,18 @@ src/CMakeFiles/ray.dir/ui/TraceGLWindow.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/fileio/bitmap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/CubeMapChooser.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/GraphicalUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceGLWindow.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceGLWindow.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/fileio/bitmap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/CubeMapChooser.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/GraphicalUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceGLWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/ui/TraceUI.cc.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -4024,12 +4029,12 @@ src/CMakeFiles/ray.dir/ui/TraceUI.cc.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.cc
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/json.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/win32/dirent.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.cc
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/json.hpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/win32/dirent.h
 src/CMakeFiles/ray.dir/ui/debuggingView.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -4180,23 +4185,23 @@ src/CMakeFiles/ray.dir/ui/debuggingView.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/RayTracer.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/cubeMap.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/ModelerCamera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.cpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/RayTracer.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/cubeMap.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/ModelerCamera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
 src/CMakeFiles/ray.dir/ui/debuggingWindow.cxx.o
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingView.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.cxx
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/debuggingWindow.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingView.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.cxx
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/debuggingWindow.h
 src/CMakeFiles/ray.dir/ui/glObjects.cpp.o
  ../third-party/glm/glm/common.hpp
  ../third-party/glm/glm/detail/_fixes.hpp
@@ -4358,19 +4363,19 @@ src/CMakeFiles/ray.dir/ui/glObjects.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Box.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cone.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Cylinder.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Sphere.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/Square.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/SceneObjects/trimesh.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/BVH.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/bbox.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/camera.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/kdTree.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/light.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/material.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/ray.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/scene/scene.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/TraceUI.h
- /home/govind/Documents/programming-files/cs378h/proj1/ray-tracer/src/ui/glObjects.cpp
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Box.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cone.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Cylinder.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Sphere.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/Square.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/SceneObjects/trimesh.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/BVH.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/bbox.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/camera.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/kdTree.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/light.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/material.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/ray.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/scene/scene.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/TraceUI.h
+ /home/govind/Documents/programming-files/cs378h/ray/src/ui/glObjects.cpp

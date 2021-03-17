@@ -72,6 +72,7 @@ private:
 
 	glm::dvec3 traceJitteredPixel(int i, int j);
 	glm::dvec3 traceAdaptivePixel(int i, int j);
+	glm::dvec3 traceAdaptivePixelHelper(int l, int b, int r, int t, int num);
 
 	bool m_bBufferReady;
 

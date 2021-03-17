@@ -156,7 +156,7 @@ public:
 
 	// Do we want to use local bounds even when computing
 	// bounding boxes in build tree??
-	const BoundingBox &getBoundingBox() const { return localbounds; }
+	// const BoundingBox &getBoundingBox() const { return localbounds; }
 };
 
 #endif // TRIMESH_H__
